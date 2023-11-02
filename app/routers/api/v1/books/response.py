@@ -1,14 +1,6 @@
-from pydantic import BaseModel
+from app.models.response import ResponseBase
 from typing import Optional
-import uuid
-import datetime
 
-class BookResponse(BaseModel):
-  id: uuid.UUID
+class BookResponse(ResponseBase):
   title: str
   description: Optional[str] = None
-  created_at: datetime.datetime
-  updated_at: datetime.datetime
-
-  class Config:
-    orm_mode = True
